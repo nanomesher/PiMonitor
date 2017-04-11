@@ -43,10 +43,9 @@ def PublishToDisplay(text,label_prefix):
       data['v'] = text
       data['fc'] = '23555'
       url_values = urllib.urlencode(data)
-      #url = "http://" + sys.argv[1] + "/TextSetText?p=0&n=" + sys.argv[2] + "&v=" + text + "&fc=12345"
+
       url = "http://" + sys.argv[1] + "/TextSetText?" + url_values
-      # Below is sync mode, switchd to async
-      # print(url)
+
       response = urllib2.urlopen(url)
       html = response.read()
     except:
